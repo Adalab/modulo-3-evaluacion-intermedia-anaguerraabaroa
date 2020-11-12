@@ -18,6 +18,10 @@
   top: 20px;
 }
 
+.pokemon__image:hover {
+  transform: rotate(45deg);
+}
+
 .pokemon__name {
   width: 180px;
   padding: 10px;
@@ -47,4 +51,10 @@
   text-transform: uppercase;
   padding: 5px;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.type:hover {
+  background-color: lightgrey;
+  color: black;
 }
