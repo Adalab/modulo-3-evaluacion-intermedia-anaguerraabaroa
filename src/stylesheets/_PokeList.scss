@@ -1,0 +1,13 @@
+.pokemon__title {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.pokemon__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
