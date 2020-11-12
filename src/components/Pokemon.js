@@ -1,13 +1,18 @@
 import React from "react";
 
 const Pokemon = (props) => {
-  const pokemonTypes = props.pokemons.types.map((type, index) => {
+  const pokemon = props.pokemonItem.types.map((type, index) => {
     return <li key={index}>{type}</li>;
   });
 
   return (
-    <div>
-      <ul className="pokemons__types">{pokemonTypes}</ul>
+    <div className="pokemon__card">
+      <img
+        src={props.pokemonItem.url}
+        alt={`Imagen Pokemon: ${props.pokemonItem.name} `}
+      />
+      <h2>{props.pokemonItem.name}</h2>
+      <ul className="pokemon__types">{pokemon}</ul>
     </div>
   );
 };

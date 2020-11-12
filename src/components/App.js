@@ -3,8 +3,8 @@ import PokeList from "./PokeList";
 import "../stylesheets/App.scss";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       pokemons: [
         {
@@ -92,10 +92,9 @@ class App extends React.Component {
   }
 
   render() {
-    //console.log(this.state.pokemons);
     return (
-      <div className="wrapper">
-        <PokeList pokemons={this.state.pokemons} />
+      <div className="page">
+        <PokeList list={this.state.pokemons} />
       </div>
     );
   }
