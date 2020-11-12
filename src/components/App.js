@@ -95,7 +95,7 @@ class App extends React.Component {
     //console.log(this.state.pokemons);
     return (
       <div className="wrapper">
-        <PokeList pokemons={this.state.pokemons.name} />
+        <PokeList pokemons={this.state.pokemons} />
       </div>
     );
   }
