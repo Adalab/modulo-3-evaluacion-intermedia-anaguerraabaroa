@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../stylesheets/_Pokemon.scss";
 
 const Pokemon = (props) => {
@@ -15,12 +16,17 @@ const Pokemon = (props) => {
       <img
         className="pokemon__image"
         src={props.pokemonItem.url}
-        alt={`Imagen Pokemon: ${props.pokemonItem.name} `}
+        alt={`Pokemon: ${props.pokemonItem.name} `}
+        title={`Pokemon: ${props.pokemonItem.name} `}
       />
       <h2 className="pokemon__name">{props.pokemonItem.name}</h2>
       <ul className="pokemon__types">{pokemon}</ul>
     </div>
   );
+};
+
+Pokemon.propTypes = {
+  pokemonItem: PropTypes.object.isRequired,
 };
 
 export default Pokemon;
