@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "../stylesheets/_Pokemon.scss";
 
 const Pokemon = (props) => {
+  // render
   const pokemon = props.pokemonItem.types.map((type, index) => {
     return (
       <li className="type" key={index}>
