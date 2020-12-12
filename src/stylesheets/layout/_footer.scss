@@ -1,0 +1,32 @@
+.footer {
+  height: 80px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $colorBrand1;
+  margin-top: 20px;
+  &__small {
+    font-size: 14px;
+    color: $colorBrand2;
+    margin-bottom: 5px;
+  }
+  &__menu--logos {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.github,
+.linkedin,
+.twitter {
+  color: $colorBrand2;
+  font-size: 20px;
+}
+
+.github::after,
+.linkedin::after {
+  content: "·";
+  padding: 5px;
+}

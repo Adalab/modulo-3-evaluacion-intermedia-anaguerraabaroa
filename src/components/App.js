@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import Header from "./Header";
-import PokeList from "./PokeList";
 import pokemons from "./data/pokemons.json";
+import Header from "./Header";
+import PokeFavourites from "./PokeFavourites";
+import PokeList from "./PokeList";
+import Footer from "./Footer";
 import "../stylesheets/App.scss";
 
 function App() {
@@ -9,7 +11,7 @@ function App() {
   const [pokedex] = useState(pokemons);
   const [favourites, setFavourites] = useState([]);
 
-  //event
+  //event handle favourites
   const handleFavourites = (clickedPokemon) => {
     if (!favourites.includes(clickedPokemon)) {
       const newFavourites = [...favourites, clickedPokemon];
@@ -22,14 +24,23 @@ function App() {
     }
   };
 
+  // event handle reset
+  const handleClick = () => {
+    setFavourites([]);
+  };
+
   return (
     <div className="page">
       <Header />
-      <PokeList
-        list={pokedex}
-        handleFavourites={handleFavourites}
-        favourites={favourites}
-      />
+      <main className="main" role="main">
+        <PokeFavourites favourites={favourites} handleClick={handleClick} />
+        <PokeList
+          list={pokedex}
+          handleFavourites={handleFavourites}
+          favourites={favourites}
+        />
+      </main>
+      <Footer />
     </div>
   );
 }
