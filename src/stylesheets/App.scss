@@ -1,8 +1,8 @@
-.page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 350px;
-  font-family: Arial, Helvetica, sans-serif;
-}
+@import "core/variables";
+@import "core/reset";
+@import "layout/header";
+@import "layout/pokeFavourites";
+@import "layout/pokeList";
+@import "layout/pokemon";
+@import "layout/footer";
+@import "pages/index";
