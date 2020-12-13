@@ -12,7 +12,7 @@ const PokeFavourites = (props) => {
         title="Pokeball"
       />
       <h2 className="favourites__title">
-        Has añadido {props.favourites.length} Pokemons a tu Pokedex
+        Has añadido {props.favourites.length} Pokemon a tu Pokedex
       </h2>
       {/* </div> */}
       <button className="favourites__reset" onClick={props.handleClick}>
