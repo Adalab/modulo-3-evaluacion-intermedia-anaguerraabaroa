@@ -55,7 +55,7 @@ git push
 ## **Exercise development requirements**
 
 - React app
-- Component structure
+- Components structure
 - Render a Pokemon list with information from pokemons.json file
 - Render a Pokemon card using props information
 - Save favourites Pokemon on Pokedex and change favourites Pokemon background colour
