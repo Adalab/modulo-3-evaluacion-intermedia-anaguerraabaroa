@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import pokemons from "./data/pokemons.json";
+import pokemons from "../data/pokemons.json";
 import Header from "./Header";
 import PokeFavourites from "./PokeFavourites";
 import PokeList from "./PokeList";
