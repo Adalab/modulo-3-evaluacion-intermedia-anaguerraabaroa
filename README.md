@@ -1,3 +1,5 @@
+![Pokemon banner](https://tcgplayerpro-www.s1.umbraco.io/media/2483/pokemon_play_pokemon_banner-02-2x.jpg)
+
 # **Pokemon**
 
 Half Module 3 Exercise of the Adalab Digital Frontend Development Bootcamp.
@@ -84,19 +86,20 @@ Pokemon
 │   │    ├── pokemon_desktop.jpg
 │   │    ├── pokemon_mobile.jpg
 │   │    └── pokemon_tablet.jpg
-│   └── scss
-│       ├── core
-│       │   ├── _reset.scss
-│       │   └── _variables.scss
-│       ├── layout
-│       │   ├── _footer.scss
-│       │   ├── _header.scss
-│       │   ├── _pokeFavourites.scss
-│       │   ├── _pokeList.scss
-│       │   └── _pokemon.scss
-│       ├── pages
-│       │   └── index.scss
-│       └── App.scss
+│   ├── stylesheets
+│   │   ├── core
+│   │   │   ├── _reset.scss
+│   │   │   └── _variables.scss
+│   │   ├── layout
+│   │   │   ├── _footer.scss
+│   │   │   ├── _header.scss
+│   │   │   ├── _pokeFavourites.scss
+│   │   │   ├── _pokeList.scss
+│   │   │   └── _pokemon.scss
+│   │   ├── pages
+│   │   │   └── index.scss
+│   │   └── App.scss
+│   └── index.js
 ├── .gitignore
 ├── debug.log
 ├── package-lock.json
@@ -118,15 +121,19 @@ Pokemon
 
 ### **PokeList component**
 
-- **Render list of Pokemon:** const PokeList
+- **Render individual Pokemon card component:** const pokemonItems
+- **Render Pokemon list:** const PokeList
 
 ### **Pokemon component**
 
-- **Render Pokemon card and add favourites Pokemon class**: const Pokemon
+- **Event listener favourites Pokemon:** const handleFavourites
+- **Render data Pokemon card and add favourites Pokemon class**: const Pokemon
+- **Render Pokemon types data**: const pokemon
 
 ### **PokemonFavourites component**
 
-- **Handle favourites Pokemon and save them on Pokedex**: const PokeFavourites
+- **Event listener reset button:** const handleClick
+- **Render number of favourites Pokemon on the Pokedex**: const PokeFavourites
 
 ### **Footer component**
 
