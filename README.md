@@ -56,9 +56,9 @@ git push
 
 - React app
 - Component structure
-- Paint a Pokemon list with information from pokemons.json file
-- Paint a Pokemon card using props information
-- Save favourites Pokemon on Pokedex and change background colour
+- Render a Pokemon list with information from pokemons.json file
+- Render a Pokemon card using props information
+- Save favourites Pokemon on Pokedex and change favourites Pokemon background colour
 - Reset Pokedex
 
 ## **Folder Structure**
