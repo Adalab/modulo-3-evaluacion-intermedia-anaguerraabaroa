@@ -2,7 +2,7 @@
 
 # **Pokemon**
 
-Half Module 3 Exercise of the Adalab Digital Frontend Development Bootcamp.
+Half module 3 project of the Adalab Digital Frontend Development Bootcamp.
 
 This is a responsive save Pokemon on your Pokedex app developed with [<img src = "https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white">](https://html.spec.whatwg.org/) [<img src = "https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white">](https://www.w3.org/Style/CSS/) and [<img src = "https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black">](https://es.reactjs.org/).
 
