@@ -134,3 +134,7 @@ Pokemon
 ## **Result**
 
 ![Mobile version](./src/images/pokemon_mobile.jpg) ![Tablet version](./src/images/pokemon_tablet.jpg) ![Desktop version](./src/images/pokemon_desktop.jpg)
+
+## **License**
+
+This project is licensed under [**MIT License**](https://spdx.org/licenses/MIT.html).
