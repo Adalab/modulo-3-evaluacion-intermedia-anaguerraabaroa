@@ -46,7 +46,7 @@ git push
 
 4. Project **[URL](https://anaguerraabaroa.github.io/Pokemon/)** is also available on GitHub Pages.
 
-## **Exercise features**
+## **Project features**
 
 - React app
 - Components structure
