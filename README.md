@@ -132,7 +132,7 @@ Pokemon
 
 - **Render footer:** const Footer
 
-## **Project captures**
+## **Screenshots**
 
 ![Mobile version](./src/images/pokemon_mobile.jpg) ![Tablet version](./src/images/pokemon_tablet.jpg) ![Desktop version](./src/images/pokemon_desktop.jpg)
 
