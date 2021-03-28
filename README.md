@@ -44,7 +44,7 @@ git push
 
 3. Run again commands on step 1 to update changes on the project.
 
-4. Project **[URL](https://anaguerraabaroa.github.io/Pokemon/)** is also available on GitHub Pages.
+4. Project **[URL](https://anaguerraabaroa.github.io/pokemon/)** is also available on GitHub Pages.
 
 ## **Project features**
 
