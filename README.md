@@ -1,4 +1,4 @@
-![Pokemon banner](https://tcgplayerpro-www.s1.umbraco.io/media/2483/pokemon_play_pokemon_banner-02-2x.jpg)
+![Mobile version](./src/images/pokemon_mobile.png) ![Tablet version](./src/images/pokemon_tablet.png) ![Desktop version](./src/images/pokemon_desktop.png)
 
 # **Pokemon**
 
@@ -75,9 +75,9 @@ Pokemon
 │   ├── images
 │   │    ├── logo.png
 │   │    ├── pokeball.png
-│   │    ├── pokemon_desktop.jpg
-│   │    ├── pokemon_mobile.jpg
-│   │    └── pokemon_tablet.jpg
+│   │    ├── pokemon_desktop.png
+│   │    ├── pokemon_mobile.png
+│   │    └── pokemon_tablet.png
 │   ├── stylesheets
 │   │   ├── core
 │   │   │   ├── _reset.scss
@@ -131,10 +131,6 @@ Pokemon
 ### **Footer component**
 
 - **Render footer:** const Footer
-
-## **Screenshots**
-
-![Mobile version](./src/images/pokemon_mobile.jpg) ![Tablet version](./src/images/pokemon_tablet.jpg) ![Desktop version](./src/images/pokemon_desktop.jpg)
 
 ## **License**
 
