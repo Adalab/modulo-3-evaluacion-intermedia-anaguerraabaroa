@@ -11,7 +11,7 @@ function App() {
   const [pokedex] = useState(pokemons);
   const [favourites, setFavourites] = useState([]);
 
-  //event handle favourites
+  //event handler favourites
   const handleFavourites = (clickedPokemon) => {
     if (!favourites.includes(clickedPokemon)) {
       const newFavourites = [...favourites, clickedPokemon];
@@ -24,7 +24,7 @@ function App() {
     }
   };
 
-  // event handle reset
+  // event handler reset
   const handleClick = () => {
     setFavourites([]);
   };
