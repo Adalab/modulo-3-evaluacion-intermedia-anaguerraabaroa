@@ -4,47 +4,34 @@
 
 Half module 3 project of the Adalab Digital Frontend Development Bootcamp.
 
-This is a responsive save Pokemon on your Pokedex app developed with [<img src = "https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white">](https://html.spec.whatwg.org/) [<img src = "https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white">](https://www.w3.org/Style/CSS/) [<img src="https://img.shields.io/badge/-SASS-cc6699?style=flat&logo=sass&logoColor=ffffff">](https://sass-lang.com/) [<img src = "https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black">](https://www.ecma-international.org/ecma-262/) and [<img src = "https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black">](https://es.reactjs.org/).
+This is a responsive save Pokemon on your Pokedex app developed with [<img src = "https://img.shields.io/badge/-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">](https://html.spec.whatwg.org/) [<img src="https://img.shields.io/badge/-SASS-cc6699?style=for-the-badge&logo=sass&logoColor=ffffff">](https://sass-lang.com/)
+[<img src = "https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">](https://www.w3.org/Style/CSS/) [<img src = "https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">](https://www.ecma-international.org/ecma-262/) and [<img src = "https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=black">](https://es.reactjs.org/)
 
 ## **Quick start guide**
 
 Instructions to start this project:
 
-### **Pre-requirements**
+## Installation
 
-This project runs with [<img src = "https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black">](https://es.reactjs.org/). Start guide [**here**](https://github.com/facebook/create-react-app).
-
-### **Installation**
-
-Once React has been installed:
-
-1. Clone repository
-2. Open a terminal
-3. Run `npm install` on the terminal to install local dependencies
-
-### **Run project**
-
-Run `npm start` on the terminal:
-
-1. Open the project on the browser using a local server.
-2. Refresh browser everytime files contained in `/src` folder are updated.
-3. Compiled files contained in `/src` folder and copy them in `/public` folder in order to be prepared for production environment.
-
-### **Updating**
-
-1. Run these commands to update changes on the project:
+- Clone repository:
 
 ```
-git add -A
-git commit -m "Message commit"
-git push
+git clone [repository]
 ```
 
-2. Run `npm run build` to create `/docs` folder and the production environment version.
+- Install NPM packages and dependencies:
 
-3. Run again commands on step 1 to update changes on the project.
+```
+npm install
+```
 
-4. Project **[URL](https://anaguerraabaroa.github.io/pokemon/)** is also available on GitHub Pages.
+- Run project on local server:
+
+```
+npm start
+```
+
+- **[Project URL](https://anaguerraabaroa.github.io/pokemon/)** is also available on GitHub Pages.
 
 ## **Project features**
 
@@ -54,6 +41,156 @@ git push
 - Render a Pokemon card using props information
 - Save favourites Pokemon on Pokedex and change favourites Pokemon background colour
 - Reset Pokedex
+
+## **Usage**
+
+### **1. App component**
+
+- Handle app, favourites Pokemon list and reset
+
+```javascript
+function App() {
+  const [pokedex] = useState(pokemons);
+  const [favourites, setFavourites] = useState([]);
+
+  const handleFavourites = (clickedPokemon) => {
+    if (!favourites.includes(clickedPokemon)) {
+      const newFavourites = [...favourites, clickedPokemon];
+      setFavourites(newFavourites);
+    } else {
+      const newFavourites = favourites.filter((favourite) => {
+        return favourite !== clickedPokemon;
+      });
+      setFavourites(newFavourites);
+    }
+  };
+
+  const handleClick = () => {
+    setFavourites([]);
+  };
+
+  return (
+    <div className="page">
+      <Header />
+      <main className="main" role="main">
+        <PokeFavourites favourites={favourites} handleClick={handleClick} />
+        <PokeList
+          list={pokedex}
+          handleFavourites={handleFavourites}
+          favourites={favourites}
+        />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+```
+
+### **2. PokeList component**
+
+- Render Pokemon list and create Pokemon individual card component
+
+```javascript
+const PokeList = (props) => {
+  const pokemonItems = props.list.map((pokemonItem) => {
+    return (
+      <li key={pokemonItem.id}>
+        <Pokemon
+          pokemonItem={pokemonItem}
+          handleFavourites={props.handleFavourites}
+          favourites={props.favourites}
+        />
+      </li>
+    );
+  });
+  return (
+    <>
+      <ul className="pokemon__list">{pokemonItems}</ul>
+    </>
+  );
+};
+```
+
+### **3. Pokemon component**
+
+- Render Pokemon individual card and handle favourite Pokemon class and Pokemon types
+
+```javascript
+const Pokemon = (props) => {
+  const handleFavourites = (ev) => {
+    const clickedPokemon = parseInt(ev.currentTarget.id);
+    props.handleFavourites(clickedPokemon);
+  };
+
+  const pokemon = props.pokemonItem.types.map((type, index) => {
+    return (
+      <li key={index} className="type">
+        {type}
+      </li>
+    );
+  });
+
+  return (
+    <div
+      id={props.pokemonItem.id}
+      className={`${"pokemon__card"} || ${
+        props.favourites.includes(parseInt(props.pokemonItem.id))
+          ? "pokemon__card--favourite"
+          : "pokemon__card"
+      }`}
+      onClick={handleFavourites}
+    >
+      <img
+        className="pokemon__image"
+        src={props.pokemonItem.url}
+        alt={`Pokemon: ${props.pokemonItem.name} `}
+        title={`Pokemon: ${props.pokemonItem.name} `}
+      />
+      <div className="pokemon__stripe"></div>
+      <div className="pokemon__button">
+        <img
+          className={`${"pokemon__ball"} || ${
+            props.favourites.includes(parseInt(props.pokemonItem.id))
+              ? "pokemon__ball--favourite"
+              : "pokemon__ball"
+          }`}
+          onClick={handleFavourites}
+          src={pokeball}
+          title="Pokeball"
+          alt="Pokeball"
+        />
+      </div>
+      <h2 className="pokemon__name">{props.pokemonItem.name}</h2>
+      <ul className="pokemon__types">{pokemon}</ul>
+    </div>
+  );
+};
+```
+
+### **4. PokemonFavourites component**
+
+- Handle number of favourite Pokemons in the Pokedex
+
+```javascript
+const PokeFavourites = (props) => {
+  return (
+    <div className="favourites">
+      <img
+        className="favourites__pokeball"
+        src={pokeball}
+        alt="Pokeball"
+        title="Pokeball"
+      />
+      <h2 className="favourites__title">
+        Has añadido {props.favourites.length} Pokemon a tu Pokedex
+      </h2>
+      <button className="favourites__reset" onClick={props.handleClick}>
+        Vaciar
+      </button>
+    </div>
+  );
+};
+```
 
 ## **Folder Structure**
 
@@ -100,38 +237,6 @@ Pokemon
 └── README.md
 ```
 
-## **Components and functions**
-
-### **App component**
-
-- **Handle app:** function App()
-- **Handle favourites:** const handleFavourites
-- **Handle reset:** const handleClick
-
-### **Header component**
-
-- **Render header:** const Header
-
-### **PokeList component**
-
-- **Render individual Pokemon card component:** const pokemonItems
-- **Render Pokemon list:** const PokeList
-
-### **Pokemon component**
-
-- **Event listener favourites Pokemon:** const handleFavourites
-- **Render data Pokemon card and add favourites Pokemon class**: const Pokemon
-- **Render Pokemon types data**: const pokemon
-
-### **PokemonFavourites component**
-
-- **Event listener reset button:** const handleClick
-- **Render number of favourites Pokemon on the Pokedex**: const PokeFavourites
-
-### **Footer component**
-
-- **Render footer:** const Footer
-
 ## **License**
 
-This project is licensed under [**MIT License**](https://spdx.org/licenses/MIT.html).
+This project is licensed under ![GitHub](https://img.shields.io/github/license/anaguerraabaroa/random-number?label=License&logo=MIT&style=for-the-badge)
