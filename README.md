@@ -167,7 +167,7 @@ const Pokemon = (props) => {
 };
 ```
 
-### **4. Pokemon Favourites component**
+### **4. PokeFavourites component**
 
 - Handle number of favourite Pokemons in the Pokedex
 
