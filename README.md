@@ -33,7 +33,7 @@ npm start
 
 - **[Project URL](https://anaguerraabaroa.github.io/pokemon/)** is also available on GitHub Pages.
 
-## **Project features**
+## **Features**
 
 - React app
 - Components structure
